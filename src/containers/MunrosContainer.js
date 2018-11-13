@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from 'react'
+import MunrosMap from '../components/MunrosMap.js'
 
 class MunrosContainer extends Component {
 
   render() {
     return (
       <>
-        <h1>Hello World</h1>
+        <MunrosMap />
       </>
     )
   }
