@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const MunrosMap = (props) => {
-  return (
-    <h2>Map</h2>
-  );
+class MunrosMap extends Component {
+
+  render() {
+    return (
+      <h2>Map</h2>
+    );
+  }
+
 };
 
 export default MunrosMap;
