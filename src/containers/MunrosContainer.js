@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import MunrosMap from '../components/MunrosMap';
 import MunroDetailBox from '../components/MunroDetailBox';
+import comments from '../data/seed_comments';
 
 class MunrosContainer extends Component {
 
   constructor() {
     super()
     this.state = {
+      comments: comments,
       munrosData: [],
       selectedMunro: null
     }
