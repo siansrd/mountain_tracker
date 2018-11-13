@@ -1,8 +1,9 @@
 import React from 'react'
+import MunroDetails from './MunroDetails'
 
 const MunroDetailBox = (props) => {
   return (
-    <h2>DetailBox</h2>
+    <MunroDetails />
   )
 }
 
