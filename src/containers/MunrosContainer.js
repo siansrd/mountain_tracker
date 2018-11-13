@@ -4,10 +4,17 @@ import MunroDetailBox from '../components/MunroDetailBox';
 
 class MunrosContainer extends Component {
 
+  constructor() {
+    super()
+    this.state = {
+      munrosData: []
+    }
+  }
+
   componentDidMount() {
     fetch('https://munroapi.herokuapp.com/api/munros')
       .then((response) => response.json())
-      .then((data) => this.setState({ data }))
+      .then((munrosData) => this.setState({ munrosData }))
   }
 
   render() {
