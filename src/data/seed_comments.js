@@ -1,15 +1,19 @@
 const comments = [
   {
-    smcid: "M256",
-    comment: "What a mountain",
+    smcid: "M001",
+    text: "The first munro of them all",
   },
   {
     smcid: "M256",
-    comment: "Had great weather all day",
+    text: "What a mountain",
   },
   {
     smcid: "M256",
-    comment: "Tried the alternative route, which was great but the path isn't as clear.",
+    text: "Had great weather all day",
+  },
+  {
+    smcid: "M256",
+    text: "Tried the alternative route, which was great but the path isn't as clear.",
   }
 ]
 
