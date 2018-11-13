@@ -20,7 +20,7 @@ class MunrosContainer extends Component {
   render() {
     return (
       <>
-        <MunrosMap />
+        <MunrosMap munrosData={this.state.munrosData} />
         <MunroDetailBox />
       </>
     );
