@@ -7,8 +7,10 @@ class MunrosContainer extends Component {
   constructor() {
     super()
     this.state = {
-      munrosData: []
+      munrosData: [],
+      selectedMunro: null
     }
+    this.handleMunroSelect = this.handleMunroSelect.bind(this)
   }
 
   componentDidMount() {
@@ -17,11 +19,20 @@ class MunrosContainer extends Component {
       .then((munrosData) => this.setState({ munrosData }))
   }
 
+  handleMunroSelect(id) {
+    const selectedMunro = this.state.munrosData.find(munro => {
+      return munro.smcid === id;
+    });
+    this.setState({ selectedMunro });
+  }
+
   render() {
     return (
       <>
-        <MunrosMap munrosData={this.state.munrosData} />
-        <MunroDetailBox />
+        <MunrosMap
+          munrosData={this.state.munrosData}
+          handleSelect={this.handleMunroSelect} />
+        <MunroDetailBox munro={this.state.selectedMunro} />
       </>
     );
   }

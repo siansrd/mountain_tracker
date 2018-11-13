@@ -29,7 +29,7 @@ class MunrosMap extends Component {
   }
 
   handleMarkerClick(event) {
-    console.log(event.target.options.value);
+    this.props.handleSelect(event.target.options.value)
   }
 
   render() {
