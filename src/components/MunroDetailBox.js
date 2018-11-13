@@ -5,7 +5,7 @@ import Comment from './Comment';
 const MunroDetailBox = (props) => {
   return (
     <>
-      <MunroDetails />
+      <MunroDetails munro={props.munro} />
       <Comment />
     </>
   );
