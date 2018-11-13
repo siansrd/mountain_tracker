@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
-import MunrosMap from '../components/MunrosMap.js'
-import MunroDetailBox from '../components/MunroDetailBox.js'
+import MunrosMap from '../components/MunrosMap'
+import MunroDetailBox from '../components/MunroDetailBox'
 
 class MunrosContainer extends Component {
 
