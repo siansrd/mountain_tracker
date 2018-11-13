@@ -12,13 +12,29 @@ class MunrosContainer extends Component {
       munrosData: [],
       selectedMunro: null
     }
-    this.handleMunroSelect = this.handleMunroSelect.bind(this)
+    this.handleMunroSelect = this.handleMunroSelect.bind(this);
+    this.combineMunrosAndCommentsData = this.combineMunrosAndCommentsData.bind(this);
   }
 
   componentDidMount() {
     fetch('https://munroapi.herokuapp.com/api/munros')
       .then((response) => response.json())
-      .then((munrosData) => this.setState({ munrosData }))
+      .then((munrosData) => {
+        const combinedData = this.combineMunrosAndCommentsData(munrosData)
+        this.setState({ munrosData: combinedData })
+      })
+  }
+
+  combineMunrosAndCommentsData(munros) {
+    return munros.map(munro => {
+      munro.comments = [];
+      this.state.comments.forEach(comment => {
+        if (comment.smcid === munro.smcid) {
+          munro.comments.push(comment);
+        }
+      });
+      return munro;
+    });
   }
 
   handleMunroSelect(id) {
