@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 const MunrosMap = (props) => {
   return (
     <h2>Map</h2>
-  )
-}
+  );
+};
 
-export default MunrosMap
+export default MunrosMap;

@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react'
-import MunrosMap from '../components/MunrosMap'
-import MunroDetailBox from '../components/MunroDetailBox'
+import React, { Component, Fragment } from 'react';
+import MunrosMap from '../components/MunrosMap';
+import MunroDetailBox from '../components/MunroDetailBox';
 
 class MunrosContainer extends Component {
 
@@ -10,9 +10,9 @@ class MunrosContainer extends Component {
         <MunrosMap />
         <MunroDetailBox />
       </>
-    )
+    );
   }
 
 }
 
-export default MunrosContainer
+export default MunrosContainer;

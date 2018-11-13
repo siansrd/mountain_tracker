@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react'
-import MunroDetails from './MunroDetails'
-import Comment from './Comment'
+import React, { Fragment } from 'react';
+import MunroDetails from './MunroDetails';
+import Comment from './Comment';
 
 const MunroDetailBox = (props) => {
   return (
@@ -8,7 +8,7 @@ const MunroDetailBox = (props) => {
       <MunroDetails />
       <Comment />
     </>
-  )
-}
+  );
+};
 
-export default MunroDetailBox
+export default MunroDetailBox;
