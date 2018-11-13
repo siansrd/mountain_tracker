@@ -10,18 +10,26 @@ class MunrosMap extends Component {
       lat: 57.4,
       lng: -4.6,
       zoom: 7,
-    }
+    };
+    this.handleMarkerClick = this.handleMarkerClick.bind(this);
   }
 
   createMarkers() {
     return this.props.munrosData.map(munro => (
       <Marker
-      position={[munro.latlng_lat, munro.latlng_lng]} key={munro.smcid}>
+      position={[munro.latlng_lat, munro.latlng_lng]}
+      value={munro.smcid}
+      key={munro.smcid}
+      onClick={this.handleMarkerClick}>
        <Popup>
          {munro.name}
        </Popup>
      </Marker>
     ))
+  }
+
+  handleMarkerClick(event) {
+    console.log(event.target.options.value);
   }
 
   render() {
