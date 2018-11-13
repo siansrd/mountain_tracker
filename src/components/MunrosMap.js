@@ -13,6 +13,17 @@ class MunrosMap extends Component {
     }
   }
 
+  createMarkers() {
+    return this.props.munrosData.map(munro => (
+      <Marker
+      position={[munro.latlng_lat, munro.latlng_lng]} key={munro.smcid}>
+       <Popup>
+         {munro.name}
+       </Popup>
+     </Marker>
+    ))
+  }
+
   render() {
     const position = [this.state.lat, this.state.lng]
     return (
@@ -20,11 +31,7 @@ class MunrosMap extends Component {
         <TileLayer
           url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager/{z}/{x}/{y}{r}.png"
         />
-        <Marker position={position}>
-         <Popup>
-           Munro Name
-         </Popup>
-       </Marker>
+        {this.createMarkers()}
       </Map>
     );
   }
