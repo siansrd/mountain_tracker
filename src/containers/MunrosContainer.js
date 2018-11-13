@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import MunrosMap from '../components/MunrosMap';
-import MunroDetailBox from '../components/MunroDetailBox';
-import comments from '../data/seed_comments';
+import MunrosMap from '../components/MunrosMap.js';
+import MunroDetailBox from '../components/MunroDetailBox.js';
+import comments from '../data/seed_comments.js';
 
 class MunrosContainer extends Component {
 
@@ -47,10 +47,18 @@ class MunrosContainer extends Component {
   render() {
     return (
       <>
-        <MunrosMap
-          munrosData={this.state.munrosData}
-          handleSelect={this.handleMunroSelect} />
-        <MunroDetailBox munro={this.state.selectedMunro} />
+        <header><h1 id='logo'>Munro Tracker</h1></header>
+        <div id='content'>
+          <div id='map-wrapper'>
+            <MunrosMap
+              munrosData={this.state.munrosData}
+              handleSelect={this.handleMunroSelect}
+            />
+          </div>
+          <div id='detail-wrapper'>
+            <MunroDetailBox munro={this.state.selectedMunro} />
+          </div>
+        </div>
       </>
     );
   }

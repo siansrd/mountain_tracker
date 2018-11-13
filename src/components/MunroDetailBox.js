@@ -1,23 +1,29 @@
 import React from 'react';
-import MunroDetails from './MunroDetails';
-import Comment from './Comment';
+import MunroDetails from './MunroDetails.js';
+import Comment from './Comment.js';
 
 const MunroDetailBox = ({munro}) => {
 
-  if (!munro) return null;
+  if (!munro) return <h3>Select a Munro from the map</h3>
 
-  const comments = munro.comments.map(comment => (
-    <Comment key={comment.smcid} comment={comment}/>
-  ))
+  let comments = 'No comments';
+
+  if (munro.comments.length > 0) {
+    comments = munro.comments.map(comment => (
+      <Comment key={comment.smcid} comment={comment}/>
+    ));
+  }
 
   return (
     <>
-      <h2>Munro Details</h2>
       <MunroDetails munro={munro} />
-      <h2>Comments</h2>
-      {comments}
+      <div className='comments'>
+        <h4>Comments</h4>
+        {comments}
+      </div>
     </>
   );
+
 };
 
 export default MunroDetailBox;
